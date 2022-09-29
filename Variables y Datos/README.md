@@ -1,43 +1,27 @@
-## Ejercitacion de la clase
-- Se espera que puedan realizar los ejercicios utilizando todo lo visto hasta ahora, y testeando sus propios codigos con varios ejemplos (numeros enteros, positivos y negativos, con coma, etc) las veces que sea necesario para asegurarse su funcionamiento. Probar que pasa si no se reciben parametros y analizar cada caso.
+### Ejercicio 1:
 
-Recordar sintaxis:
-```javascript
-const miFuncion = (parametros) => {
-    // sentencias de codigo
-    return
-}
-miFuncion()
-```
+- Declarar variables con datos de un usuario (user, age, email)
+- Mostrar estos datos por consola
+- Mostrar el tipo de dato de cada variable por consola
 
-### Ejercicio 0
-- Crear una funcion que reciba como parametro un nombre y muestre por consola un saludo a esa persona.
+### Ejercicio 2:
 
-### Ejercicio 1
-- Crear una funcion que reciba como parametro dos numeros y devuelva el resultado de cada calculo aritmetico.
-```javascript
-sumar(a, b)
-restar(a, b)
-dividir(a, b)
-multiplicar(a, b)
-```
+- Pedir al usuario sus datos personales (nombre, edad, pais, profesion)
+- Mostrar esos datos por consola usando concatenacion
+- Mostrar por consola la edad + 10
 
-### Ejercicio 2
-- Crear una funcion que reciba como parametro un sueldo y un numero que representa el porcentaje de aumento. La funcion debe devolver el sueldo mas el aumento.
-```javascript
-aumentarSueldo(1000, 10) // deberia devolver 1100
-```
+### Ejercicio 3:
 
-### Ejercicio 3
-- Crear una funcion que reciba como parametros un nombre, una edad, una profesion y un pais y retorne un string con la concatenacion de los datos ingresados. Probar con varios datos varias veces para comprobar funcionamiento.
-Ejemplo: Me llamo Pepa, tengo 30 anios, vivo en Colombia y soy abogada.
+- Tomar las variables del ejercicio 1 y mostrar un texto por consola, por el documento y por un alert (hagan de a uno por vez, comentando y probando) y utilizar template literals.
+  Recordar: document.write() y alert()
 
-### Ejercicio 4
-- Crear una funcion que reciba como parametro un precio y devuelva el precio mas el IVA.
+### Ejercicio 4:
 
-### Ejercicio 5
-- Como harian para usar las funciones del ejercicio 1 pero que los numeros se los pidamos al usuario?
-- Repetir solucion pero para el ejercicio 2 y ejercicio 3
+- Pedir al usuario dos numeros y mostrar por el documento los resultados de cada calculo aritmetico.
+  Ejemplo:
+  El resultado de la suma es: ${resultado}
 
 ### Bonus:
-- Crear una funcion contador() que cada vez que se ejecute, sume en una unidad a una variable.
+
+- A lo que hiciste en el ejercicio 4, sumale un tercer numero a cada calculo. Mostrar por consola y analizar que paso en cada caso.
+  Obtuviste los resultados esperados?
