@@ -12,7 +12,7 @@
 
 // Strings
 let nombre = "Agustin";
-let saludo = 'El nombre es "Agustin"';
+// let saludo = 'El nombre es "Agustin"';
 let mensaje = "hola mundo";
 
 // Numbers
@@ -119,3 +119,57 @@ let variable1 = 1,
 // console.log(Number(saludoPrompt));
 
 // confirm("Tenes mas de 18 años?");
+
+// ---------- REPASO Y EJERCICIOS ----------
+
+// variables
+// var - let y const
+
+// Ejercicio 1
+
+// const user = "Agustin",
+//     age= 22,
+//     email = "agustin@agus.com";
+
+let user = prompt("Ingrese su nombre:");
+let age = Number(prompt("Ingrese su edad:"));
+let email = prompt("Ingrese su email:");
+
+console.log(typeof user);
+console.log(typeof age);
+console.log(typeof email);
+
+
+let saludo = `Hola me llamo ${user} y tengo ${age} años y mi email ${email}. Y mi + 10 es ${
+  age + 10
+}`;
+
+// console.log(user+age+email);
+
+// console.log(user + " " + age + " " +email);
+
+// console.log(`${user} ${age} ${email}`);
+
+console.log(saludo);
+
+
+// console.log(age * 10)
+
+// console.log(age - 10)
+
+
+
+// Ejercicio 3
+document.write(saludo);
+
+alert(saludo);
+
+
+// Ejercicio 4
+
+let numero1 = Number(prompt("Ingrese el numero"));
+let numero2 = Number(prompt("Ingrese el segundo numero"));
+
+// let resultado = numero1 + numero2;
+
+document.write(`<br> El resultado de la suma es: ${numero1 + numero2}`);
