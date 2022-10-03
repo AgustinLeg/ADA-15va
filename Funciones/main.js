@@ -14,7 +14,7 @@ let numeroDos = 5;
 
 // function declaration
 function suma() {
-  let resultado = numeroUno + numeroDos;
+  resultado = numeroUno + numeroDos;
   console.log("Sumar = " + resultado);
 }
 
