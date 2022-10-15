@@ -1,0 +1,24 @@
+
+
+.titulo {
+  font-size: 28px;
+  text-decoration: underline;
+}
+
+.error {
+  font-weight: bold;
+  color: red;
+}
+
+.azul {
+  color: blue;
+}
+
+.verde {
+  color: green;
+}
+
+
+#main h1 {
+  color: yellow;
+}
