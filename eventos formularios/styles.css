@@ -1,0 +1,21 @@
+body {
+  min-height: 200vh;
+}
+
+.titulo {
+  color: tomato;
+  font-weight: bold;
+  text-align: center;
+}
+
+.formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* .formulario input {
+  margin: 10px;
+} */
