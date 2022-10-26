@@ -1,0 +1,48 @@
+body {
+  background-color: white;
+}
+
+.dark-theme {
+  background-color: black;
+}
+
+/* .dark-theme .titulo{
+  color: white;
+}
+
+.light-theme .titulo {
+  color: black;
+} */
+
+/* 
+.titulo {
+  color: black;
+}
+
+.dark-theme .titulo{
+  color: white;
+}
+
+img{
+  width: 50px;
+} */
+
+.titulo {
+  font-size: 30px;
+  font-weight: bold;
+  color: blue;
+}
+
+.mainContent {
+  background-color: #f2f2f2;
+}
+
+/* Modo oscuro */
+
+.modo-oscuro .titulo {
+  color: aqua;
+}
+
+.modo-oscuro .mainContent {
+  background-color: #525252;
+}
