@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+      integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+      integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>Ejercicios</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Ejercicios</h1>
+
+      <section id="ejercicio-favoritos">
+        <div id="imagenes">
+          <h2>Imagenes</h2>
+          <img
+            src="https://i.pinimg.com/564x/31/ad/ce/31adce733ed860008db33af54e41bb4c.jpg"
+            alt=""
+            class="img"
+            id="uno"
+          />
+          <img
+            src="https://i.pinimg.com/564x/49/62/04/4962049fd6085ccae8c49a225d6adb60.jpg"
+            alt=""
+            class="img"
+            id="dos"
+          />
+          <img
+            src="https://i.pinimg.com/564x/88/b4/e4/88b4e4beb1de83eab0af9b3e3b5ec0f4.jpg"
+            alt=""
+            class="img"
+            id="tres"
+          />
+
+          <img
+            src="https://i.pinimg.com/564x/7a/d5/f1/7ad5f1f01cebe0712c523656803874eb.jpg"
+            alt=""
+            class="img"
+            id="cuatro"
+          />
+          <img
+            src="https://i.pinimg.com/564x/46/41/cc/4641cca45e4c669052103c349d49d117.jpg"
+            alt=""
+            class="img"
+            id="cinco"
+          />
+          <img
+            src="https://i.pinimg.com/564x/b5/18/76/b51876858380cfad8febdffb4542d10d.jpg"
+            alt=""
+            class="img"
+            id="seis"
+          />
+        </div>
+
+        <div id="favoritos">
+          <h2>Favoritos</h2>
+        </div>
+      </section>
+      <section id="ejercicio-descargar-img">
+        <div id="img-descargar">
+          <p>Hola pepito</p>
+          <img
+            src="https://cdn.pixabay.com/photo/2022/08/18/10/41/herring-gull-7394570_960_720.jpg"
+            alt=""
+            class="img"
+          />
+          <p>Hola juan</p>
+        </div>
+
+        <button id="btn">Descargar</button>
+      </section>
+
+      <section>
+        <div id="box">
+          TOP TEXT
+        </div>
+
+        <div>
+          <img src="https://cdn.pixabay.com/photo/2022/08/18/10/41/herring-gull-7394570_960_720.jpg" alt="gaviota" class="img" id="img-box"> 
+        </div>
+        
+        <div class="form-control">
+          <label for="input-text" class="form-label">Arriba</label>
+          <input
+            type="text"
+            id="input-text"
+            class="form-input"
+            value="TOP TEXT"
+          />
+        </div>
+        <!-- Textos -->
+        <div class="form-control">
+          <label for="bottom-text" class="form-label">Abajo</label>
+          <input
+            type="text"
+            id="bottom-text"
+            class="form-input"
+            value="BOTTOM TEXT"
+          />
+        </div>
+        <div class="form-control">
+          <label for="input-color" class="form-label">Color</label>
+          <input type="color" id="input-color" class="form-input" />
+        </div>
+
+        <!-- Filtros -->
+        <div class="form-control">
+          <label for="input-opacidad" class="form-label">Opacidad</label>
+          <input type="range" id="input-opacidad" class="form-input" />
+        </div>
+        <div class="form-control">
+          <label for="input-brillo" class="form-label">Brillo</label>
+          <input type="range"" id="input-brillo" class="form-input" min="0" max="1" step="0.1"/>
+        </div>
+
+        <button id="resetear-filtros">RESETEAR</button>
+      </section>
+    </div>
+
+    <!-- <script src="main.js"></script> -->
+    <script src="tp.js"></script>
+  </body>
+</html>
