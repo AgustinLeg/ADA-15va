@@ -1,0 +1,21 @@
+.aside {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: beige;
+  height: 100vh;
+  width: 200px;
+}
+
+#img {
+  width: 300px;
+  height: 300px;
+  /* background-image: url('https://cdn.pixabay.com/photo/2022/08/18/10/41/herring-gull-7394570_960_720.jpg'); */
+  background-size: cover;
+  background-position: center;
+  background-color: antiquewhite;
+}
+
+.hidden {
+  display: none;
+}
