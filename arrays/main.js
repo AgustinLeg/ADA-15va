@@ -180,3 +180,20 @@ console.log(numeros[2][0]);
 
 // numeros[2][0] => ['3','4'] => '3';
 
+
+
+const germinar = (plantines) => {
+  let plantinesGerminados = plantines[0];
+  for(let i=1; i<plantines.length ;i++){
+    
+    if(plantines[i]==='-'){
+      plantinesGerminados+=(plantines[i-1])
+    }
+    else{
+      plantinesGerminados+=(plantines[i])
+    }
+  }
+  return plantinesGerminados
+}
+
+console.log(germinar('A-B-C-'))
