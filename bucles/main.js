@@ -151,3 +151,34 @@ do {
       break;
   }
 } while (opcion !== 4);
+
+
+// ============= EJERCICIOS MUMUKI =================
+const estanJuntos = (personajes) => {
+  const Sam = "Sam";
+  const Frodo = "Frodo";
+  for (let i = 0; i < personajes.length; i++) {
+    if (personajes[i] === Frodo) {
+      return personajes[i - 1] === Sam || personajes[i + 1] === Sam;
+    }
+  }
+};
+
+console.log(estanJuntos(["Sam", "Frodo", "Legolas"])); // true
+console.log(estanJuntos(["Aragorn", "Frodo", "Sam"])); // true
+console.log(estanJuntos(["Sam", "Orco", "Frodo"])); // false
+
+const germinar = (plantines) => {
+  let plantinesGerminados = plantines[0]; // => '🌷🌷🌻🌻'
+
+  for (let i = 1; i < plantines.length; i++) {
+    if (plantines[i] === "🌱") {
+      plantinesGerminados += plantines[i - 1];
+    } else {
+      plantinesGerminados += plantines[i];
+    }
+  }
+  return plantinesGerminados;
+};
+
+console.log(germinar("🌷🌱🌻🌱🌸🌱🌷🌱🌻🌱🌸🌱"));
