@@ -152,7 +152,6 @@ do {
   }
 } while (opcion !== 4);
 
-
 // ============= EJERCICIOS MUMUKI =================
 const estanJuntos = (personajes) => {
   const Sam = "Sam";
@@ -182,3 +181,17 @@ const germinar = (plantines) => {
 };
 
 console.log(germinar("🌷🌱🌻🌱🌸🌱🌷🌱🌻🌱🌸🌱"));
+
+const invertirCaso = (string) => {
+  let stringInvertido = "";
+
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === string[i].toUpperCase()) {
+      stringInvertido += string.charAt[i].toLowerCase();
+    } else {
+      stringInvertido += string[i].toUpperCase();
+    }
+  }
+
+  return stringInvertido;
+};
