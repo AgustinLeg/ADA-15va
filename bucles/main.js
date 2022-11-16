@@ -127,30 +127,30 @@ const persona = {
 
 let opcion;
 
-do {
-  opcion = Number(
-    prompt(
-      "Ingrese una opcion \n 1) Comprar Pan \n 2) Ir a la plaza \n 3) Comprar Agua \n 4) Salir"
-    )
-  );
-  switch (opcion) {
-    case 1:
-      console.log("Comprar Pan");
-      break;
-    case 2:
-      console.log("Ir a la plaza");
-      break;
-    case 3:
-      console.log("Comprar Agua");
-      break;
-    case 4:
-      console.log("Chau 👋🏾...");
-      break;
-    default:
-      console.log("OPCION INCORRECTA");
-      break;
-  }
-} while (opcion !== 4);
+// do {
+//   opcion = Number(
+//     prompt(
+//       "Ingrese una opcion \n 1) Comprar Pan \n 2) Ir a la plaza \n 3) Comprar Agua \n 4) Salir"
+//     )
+//   );
+//   switch (opcion) {
+//     case 1:
+//       console.log("Comprar Pan");
+//       break;
+//     case 2:
+//       console.log("Ir a la plaza");
+//       break;
+//     case 3:
+//       console.log("Comprar Agua");
+//       break;
+//     case 4:
+//       console.log("Chau 👋🏾...");
+//       break;
+//     default:
+//       console.log("OPCION INCORRECTA");
+//       break;
+//   }
+// } while (opcion !== 4);
 
 // ============= EJERCICIOS MUMUKI =================
 const estanJuntos = (personajes) => {
@@ -195,3 +195,20 @@ const invertirCaso = (string) => {
 
   return stringInvertido;
 };
+
+
+const comer = (string) => {
+  let posicionConejo =string.indexOf('C')
+  let posicionProhibido =string.indexOf('P')
+
+  string = string.slice(0,posicionConejo) + string.slice(posicionProhibido + 1)
+
+  return string
+}
+
+comer('CzlzP'); // => ''
+// 🐰🥕🥬🥕🚫
+comer('zlCzzzP');//=>🥬🥕
+// 🥕🥬🐰🥕🥕🥕🚫
+comer('pzpCplppPf'); // => 🌱🥕🌱🌷
+// 🌱🥕🌱🐰🌱🥬🌱🌱🚫🌷
