@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <title>Formulario con Bulma</title>
+  </head>
+  <body>
+    <section class="container mt-5 p-2">
+      <div class="columns">
+        <form id="form" class="column is-half is-offset-one-quarter">
+          <h1 class="title">Iniciar Sesion</h1>
+          <div class="field">
+            <label for="email" class="label">Email</label>
+            <div class="control">
+              <input
+                type="text"
+                id="email"
+                name="email"
+                class="input"
+                placeholder="Ingrese su email..."
+              />
+            </div>
+            <!-- Aca va el mensaje de error -->
+            <small></small>
+          </div>
+          <div class="field">
+            <label for="password" class="label">Contraseña</label>
+            <div class="control">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="input"
+                autocomplete="off"
+                placeholder="Ingrese su contraseña..."
+              />
+            </div>
+            <!-- Aca va el mensaje de error -->
+            <small></small>
+          </div>
+          <div class="field mt-5">
+            <div class="control">
+              <button type="submit" class="button is-primary is-fullwidth">
+                Iniciar Sesion
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="container mt-5">
+      <div class="columns">
+        <div class="column has-background-info">
+          <div class="has-background-danger">1</div>
+          <div class="has-background-dark">3</div>
+        </div>
+        <div class="column is-8 has-background-primary">2</div>
+      </div>
+    </section>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>
