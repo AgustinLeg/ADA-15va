@@ -6,6 +6,7 @@ const $btnCart = $("#btn-cart");
 const $cartModal = $("#cart-modal");
 const $btnCloseCart = $("#btn-close-cart");
 const $btnClearCart = $("#clear-cart");
+
 let buttons, buttonsDeleteProduct;
 
 let cart = [];
@@ -32,7 +33,7 @@ const generateProducts = (products) => {
         </div>
 
         <div class="content">
-          ${description}
+          ${description || ""}
         </div>
         <div class="media">
           <div class="media-content">

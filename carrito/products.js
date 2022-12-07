@@ -38,4 +38,11 @@ const products = [
       "Malesuada proin libero nunc consequat interdum. Massa id neque aliquam vestibulum morbi blandit. ",
     price: 2500,
   },
+  {
+    id: 5,
+    image: 'https://cdn.pixabay.com/photo/2022/08/18/10/41/herring-gull-7394570_960_720.jpg',
+    name: 'Tucan',
+    category: 'animales',
+    price: 10000
+  }
 ];
