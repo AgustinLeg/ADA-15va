@@ -15,7 +15,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style.css" />
     <title>Ecommerce</title>
   </head>
   <body>
@@ -67,11 +67,22 @@
         <h2 class="title mb-2">Mi Carrito</h2>
         <div class="product-list"></div>
         <!-- Any other Bulma elements you want -->
-        <div class="mt-5">
-          <button class="button is-danger" id="clear-cart">Vaciar Carrito</button>
+        <div class="columns mt-5">
+          <div class="column is-three-quarters">
+            <h2 class="title">Total: <span id="total">$0</span></h2>
+          </div>
+          <div class="column">
+            <button class="button is-danger" id="clear-cart">
+              Vaciar Carrito
+            </button>
+          </div>
         </div>
       </div>
-      <button class="modal-close is-large" aria-label="close" id="btn-close-cart"></button>
+      <button
+        class="modal-close is-large"
+        aria-label="close"
+        id="btn-close-cart"
+      ></button>
     </div>
 
     <script src="products.js"></script>

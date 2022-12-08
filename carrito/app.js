@@ -6,14 +6,97 @@ const $btnCart = $("#btn-cart");
 const $cartModal = $("#cart-modal");
 const $btnCloseCart = $("#btn-close-cart");
 const $btnClearCart = $("#clear-cart");
+const $total = $("#total");
 
 let buttons, buttonsDeleteProduct;
 
-let cart = [];
+let cartStorage = localStorage.getItem("carrito");
+let cart = cartStorage ? JSON.parse(cartStorage) : [];
+
+// let cart =  JSON.parse(localStorage.getItem('carrito')) || [];
+
+
+// ----- Carrito -----
+const addProduct = (id) => {
+  // buscar el producto por id
+  const chosenProduct = findProduct(id);
+  // verificar si el producto ya existe en el carrito
+  if (isInCart(id)) {
+    // modificar la cantidad del mismo producto
+    cart.map((product) => {
+      if (product.id === id) {
+        product.quantity = product.quantity + 1;
+      }
+      return product;
+    });
+  } else {
+    const newProduct = { ...chosenProduct, quantity: 1 };
+    // newProduct.quantity = 1;
+
+    cart.push(newProduct);
+  }
+
+  globalUpdateCart();
+};
+
+const findProduct = (id) => products.find((product) => product.id === id);
+
+const isInCart = (id) => cart.some((product) => product.id === id);
+
+const clearCart = () => {
+  const $productList = $cartModal.querySelector(".product-list");
+  $productList.innerHTML = "";
+  while (cart.length > 0) {
+    cart.pop();
+  }
+  globalUpdateCart();
+};
+
+const removeProduct = (id) => {
+  const productCart = cart.find((product) => product.id === id);
+
+  if (productCart.quantity > 1) {
+    cart.map((product) => {
+      if (product.id === id) {
+        product.quantity = product.quantity - 1;
+      }
+      return product;
+    });
+  } else {
+    cart = cart.filter((product) => product.id !== id);
+  }
+
+  globalUpdateCart();
+};
+
+const globalUpdateCart = () => {
+  localStorage.setItem("carrito", JSON.stringify(cart));
+
+  const total = calcularTotal();
+
+  actualizarVistaTotal(total);
+
+  showProductCart();
+};
+
+const calcularTotal = () => {
+  let total = 0;
+  for (const product of cart) {
+    total += product.price * product.quantity;
+  }
+  return total;
+};
+
+const actualizarVistaTotal = (total) => {
+  $total.innerText = `$ ${total}`;
+};
+
+
+
+// --------- Vista ----------
 
 // Mostrar los products en el html
-
-const generateProducts = (products) => {
+const generateProducts = () => {
   for (let { image, description, name, price, id } of products) {
     $container.innerHTML += `
     <div class="card">
@@ -47,41 +130,11 @@ const generateProducts = (products) => {
   }
 };
 
-generateProducts(products);
-
-// ----- Carrito -----
-
-buttons = $$(".btn-product");
-
-const addProduct = (id) => {
-  // buscar el producto por id
-  const chosenProduct = findProduct(id);
-  // verificar si el producto ya existe en el carrito
-  if (isInCart(id)) {
-    // modificar la cantidad del mismo producto
-    cart.map((product) => {
-      if (product.id === id) {
-        product.quantity = product.quantity + 1;
-      }
-      return product;
-    });
-  } else {
-    const newProduct = { ...chosenProduct, quantity: 1 };
-    // newProduct.quantity = 1;
-
-    cart.push(newProduct);
-  }
-};
-
-const findProduct = (id) => products.find((product) => product.id === id);
-
-const isInCart = (id) => cart.some((product) => product.id === id);
-
 const showProductCart = () => {
-  const $modalContent = $cartModal.querySelector(".product-list");
-  $modalContent.innerHTML = "";
+  const $productList = $cartModal.querySelector(".product-list");
+  $productList.innerHTML = "";
   for (const { image, name, id, price, quantity } of cart) {
-    $modalContent.innerHTML += `
+    $productList.innerHTML += `
   <div class="card">
     <div class="card-content">
       <div class="media">
@@ -92,7 +145,8 @@ const showProductCart = () => {
         </div>
         <div class="media-content">
           <p class="title is-4">${name}
-          <button class="button is-danger is-small" id="clear-cart" onclick="removeProduct(${id})" >X</button>
+          <button class="button is-primary is-small" id="clear-cart" onclick="addProduct(${id})" >+</button>
+          <button class="button is-danger is-small" id="clear-cart" onclick="removeProduct(${id})" >-</button>
           </p>
           <p class="subtitle is-6">$${price}</p>
           <p class="subtitle is-6">cantidad ${quantity}</p>
@@ -105,18 +159,6 @@ const showProductCart = () => {
   }
 };
 
-const clearCart = () => {
-  const $modalContent = $cartModal.querySelector(".product-list");
-  $modalContent.innerHTML = "";
-  while (cart.length > 0) {
-    cart.pop();
-  }
-};
-
-const removeProduct = (id) => {
-  cart = cart.filter((product) => product.id !== id);
-  showProductCart();
-};
 
 // ---- eventos -----
 
@@ -127,18 +169,34 @@ $btnCloseCart.addEventListener("click", () => {
   $cartModal.classList.remove("is-active");
 });
 
-for (const button of buttons) {
-  button.addEventListener("click", (e) => {
-    // agregar el producto al carrito
-    addProduct(Number(e.target.id));
-    showProductCart();
-  });
-}
-1;
-
 $btnClearCart.addEventListener("click", clearCart);
 
-console.log(buttonsDeleteProduct);
+
+// Inicio de Ecommerce
+const initApp = () => {
+  // genera las cards de productos
+  generateProducts();
+
+  buttons = $$(".btn-product");
+
+  for (const button of buttons) {
+    button.addEventListener("click", (e) => {
+      // agregar el producto al carrito
+      addProduct(Number(e.target.id));
+    });
+  }
+
+  // genera las cards de productos en el carrito del local storage
+  showProductCart();
+
+  // actualizar el total del carrito del local storage
+  const total = calcularTotal();
+  actualizarVistaTotal(total);
+};
+
+initApp();
+
+
 // Vaciar el array
 
 // let a = [1, 2, 3, 4];
@@ -160,3 +218,28 @@ console.log(buttonsDeleteProduct);
 // const colores = ["rojo", "azul", "verde"];
 
 // console.log(colores.filter(color => color !== 'azul'))
+
+// localStorage.setItem('nombre','agustin')
+// localStorage.setItem('nombre1','agustin')
+// localStorage.setItem('nombre2','agustin')
+// localStorage.setItem('nombre3','agustin')
+// const pepe = localStorage.getItem('nombre')
+// localStorage.removeItem('nombre')
+
+// localStorage.clear()
+// console.log(pepe)
+
+// console.log(products)
+// console.log(JSON.stringify(products))
+
+// localStorage.setItem("products", JSON.stringify(products));
+
+// const productsLocalStorage = JSON.parse(localStorage.getItem("products"));
+
+// const productsParsed = JSON.parse(productsLocalStorage)
+
+// console.log(productsParsed)
+
+// for (const item of productsLocalStorage) {
+//   console.log(item)
+// }

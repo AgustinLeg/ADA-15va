@@ -8,6 +8,7 @@ const products = [
     description:
       "Malesuada proin libero nunc consequat interdum. Massa id neque aliquam vestibulum morbi blandit. ",
     price: 1500,
+    
   },
   {
     id: 2,
