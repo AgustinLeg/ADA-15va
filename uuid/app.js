@@ -51,13 +51,29 @@ form.addEventListener("submit", (e) => {
   // agregar item al array
   array.push(item);
 
-  mostrarElementoHTML(item);
+  // mostrarElementoHTML(item);
+
+  const li = document.createElement("li");
 
   // agregar item al html
-  // container.innerHTML += `<li>
-  //   <span>${item.name}</span>
-  //   <button onClick="removeName(${item.id})">X</button>
-  //   </li>`;
+  li.innerHTML += `
+    <span>${item.name}</span>
+    <button class="btn-link btn-delete">eliminar</button>
+    <button class="btn-link btn-edit">editar</button>
+    `;
+
+  const btnEliminar = li.querySelector(".btn-delete");
+  const btnEditar = li.querySelector(".btn-edit");
+
+  btnEliminar.onclick = () => {
+    removeName(item.id);
+  };
+
+  btnEditar.onclick = () => {
+    alert("EDITARRRR");
+  };
+
+  container.append(li);
 });
 
 const mostrarElementoHTML = (item) => {
