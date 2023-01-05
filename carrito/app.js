@@ -8,7 +8,7 @@ const $btnCloseCart = $("#btn-close-cart");
 const $btnClearCart = $("#clear-cart");
 const $total = $("#total");
 
-let buttons, buttonsDeleteProduct;
+let buttons;
 
 let cartStorage = localStorage.getItem("carrito");
 let cart = cartStorage ? JSON.parse(cartStorage) : [];
