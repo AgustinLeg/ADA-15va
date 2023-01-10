@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <title>API REST</title>
+  </head>
+  <body>
+    <h1>API REST</h1>
+
+    <h2>API => Interfaz de programacion de aplicaciones</h2>
+
+    <ul>
+      <li>API SOAP</li>
+      <li>API RPC</li>
+      <li class="famosa">API WebSocket</li>
+      <li class="famosa">API REST</li>
+    </ul>
+
+    <h3>REST => transferencia de estado representacional.</h3>
+
+    <ul>
+      <li>GET</li>
+      <li>PUT</li>
+      <li>PATCH</li>
+      <li>POST</li>
+      <li>DELETE</li>
+    </ul>
+
+    <h3 class="title m-5">Personajes</h3>
+
+    <h3 class="title m-5">Detalle del Personaje</h3>
+    <div id="container_details"></div>
+
+    <div id="container" class="is-flex is-flex-wrap-wrap" style="gap: 15px">
+      <span>cargando...</span>
+    </div>
+    <div id="error_container"></div>
+
+    <nav class="pagination is-flex is-justify-content-center mt-5" role="navigation" aria-label="pagination">
+      <button class="pagination-previous" id="btn-prev">Previous</button>
+      <button class="pagination-next" id="btn-next">Next page</button>
+    </nav>
+
+    <script src="app.js"></script>
+  </body>
+</html>
