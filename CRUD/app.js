@@ -105,7 +105,8 @@ const renderUsers = (users) => {
   for (const button of $$(".btn-delete")) {
     button.addEventListener("click", () => {
       const id = button.getAttribute("data-id");
-      deleteUser(id);
+      $("#btn-modal-delete").setAttribute("data-id", id);
+      showModal();
     });
   }
 
@@ -147,10 +148,15 @@ const showForm = () => {
   showElement(form);
 };
 
-// const showModal = () => {
-//   const modal = $('#modal');
-//   modal.classList.add('is-active');
-// }
+const showModal = () => {
+  const modal = $("#modal");
+  modal.classList.add("is-active");
+};
+
+const hideModal = () => {
+  const modal = $("#modal");
+  modal.classList.remove("is-active");
+};
 
 // Eventos
 
@@ -177,4 +183,12 @@ $("#btn-cancel").addEventListener("click", () => {
   const form = $("#form");
   showElement(table);
   hideElement(form);
+});
+
+// Modal
+$("#btn-modal-cancel").addEventListener("click", hideModal);
+$("#btn-modal-close").addEventListener("click", hideModal);
+$("#btn-modal-delete").addEventListener("click", (e) => {
+  const id = e.target.getAttribute("data-id");
+  deleteUser(id);
 });
